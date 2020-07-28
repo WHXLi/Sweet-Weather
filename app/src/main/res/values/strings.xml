@@ -1,0 +1,43 @@
+<resources>
+    <string name="app_name">Sweet Weather</string>
+    <string name="city_name">City</string>
+    <string name="city_day">Day</string>
+    <string name="city_temperature">C&#176;</string>
+    <string name="city_status">Status</string>
+    <string name="city_search">Введите город</string>
+    <string name="city_search_btn">Поиск городов</string>
+    <string name="browser_btn">О городе</string>
+    <string-array name="days">
+        <item>Пн.</item>
+        <item>Вт.</item>
+        <item>Ср.</item>
+        <item>Чт.</item>
+        <item>Пт.</item>
+        <item>Сб.</item>
+        <item>Вс.</item>
+    </string-array>
+    <string-array name="temperatures">
+        <item>20&#176;</item>
+        <item>24&#176;</item>
+        <item>19&#176;</item>
+        <item>15&#176;</item>
+        <item>28&#176;</item>
+        <item>30&#176;</item>
+        <item>28&#176;</item>
+        <item>26&#176;</item>
+    </string-array>
+    <string-array name="statuses">
+        <item>Солнечно</item>
+        <item>Дождь</item>
+        <item>Облачно</item>
+        <item>Буря</item>
+    </string-array>
+    <string-array name="cities">
+        <item>Москва</item>
+        <item>Санкт-Петербург</item>
+        <item>Лондон</item>
+        <item>Париж</item>
+        <item>Орёл</item>
+        <item>Екатеринбург</item>
+    </string-array>
+</resources>
