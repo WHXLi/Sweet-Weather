@@ -1,12 +1,12 @@
 <resources>
     <string name="app_name">Sweet Weather</string>
+    <string name="background">Background</string>
     <string name="city_name">City</string>
     <string name="city_day">Day</string>
     <string name="city_temperature">C&#176;</string>
     <string name="city_status">Status</string>
     <string name="city_search">Введите город</string>
-    <string name="city_search_btn">Поиск городов</string>
-    <string name="browser_btn">О городе</string>
+    <string name="citySearch_button">Поиск городов</string>
     <string-array name="days">
         <item>Пн.</item>
         <item>Вт.</item>
@@ -35,9 +35,13 @@
     <string-array name="cities">
         <item>Москва</item>
         <item>Санкт-Петербург</item>
-        <item>Лондон</item>
-        <item>Париж</item>
-        <item>Орёл</item>
-        <item>Екатеринбург</item>
+        <item>Токио</item>
+        <item>Дели</item>
+        <item>Шанхай</item>
+        <item>Сан-Паулу</item>
+        <item>Мехико</item>
+        <item>Каир</item>
+        <item>Мумбаи</item>
+        <item>Пекин</item>
     </string-array>
 </resources>
