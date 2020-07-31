@@ -20,17 +20,16 @@
 
     <TextView
         android:id="@+id/cityName"
-        android:layout_width="200dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"
         android:text="@string/city_name"
         android:textSize="36sp"
-        app:layout_constraintBottom_toBottomOf="@+id/background"
+        app:layout_constraintBottom_toTopOf="@+id/day4"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.26"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.20999998" />
+        app:layout_constraintVertical_bias="0.10" />
 
     <TextView
         android:id="@+id/cityTemperature"
@@ -38,11 +37,12 @@
         android:layout_height="wrap_content"
         android:text="@string/city_temperature"
         android:textSize="30sp"
-        app:layout_constraintBottom_toBottomOf="@+id/background"
-        app:layout_constraintEnd_toEndOf="@+id/background"
-        app:layout_constraintStart_toEndOf="@+id/cityName"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.13" />
+        app:layout_constraintBottom_toTopOf="@+id/day3"
+        app:layout_constraintEnd_toStartOf="@+id/cityStatus"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/cityStatus"
@@ -50,9 +50,11 @@
         android:layout_height="wrap_content"
         android:text="@string/city_status"
         android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="@+id/background"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/cityName"
-        app:layout_constraintTop_toBottomOf="@+id/cityTemperature" />
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/cityTemperature"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/day1"
@@ -231,33 +233,7 @@
 
     <TextView
         android:id="@+id/temperature1"
-        android:layout_width="0dp"
-        android:layout_height="40dp"
-        android:background="@color/colorBackground"
-        android:gravity="center"
-        android:text="@string/city_temperature"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toStartOf="@+id/temperature4"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/temperature5"
-        app:layout_constraintTop_toBottomOf="@+id/status2" />
-
-    <TextView
-        android:id="@+id/temperature2"
-        android:layout_width="0dp"
-        android:layout_height="40dp"
-        android:background="@color/colorBackground"
-        android:gravity="center"
-        android:text="@string/city_temperature"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toStartOf="@+id/temperature6"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/temperature3"
-        app:layout_constraintTop_toBottomOf="@+id/status6" />
-
-    <TextView
-        android:id="@+id/temperature3"
-        android:layout_width="0dp"
+        android:layout_width="59dp"
         android:layout_height="40dp"
         android:background="@color/colorBackground"
         android:gravity="center"
@@ -265,52 +241,13 @@
         android:textSize="24sp"
         app:layout_constraintEnd_toStartOf="@+id/temperature2"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/temperature7"
-        app:layout_constraintTop_toBottomOf="@+id/status5" />
-
-    <TextView
-        android:id="@+id/temperature4"
-        android:layout_width="0dp"
-        android:layout_height="40dp"
-        android:background="@color/colorBackground"
-        android:gravity="center"
-        android:text="@string/city_temperature"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toStartOf="@+id/temperature7"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/temperature1"
-        app:layout_constraintTop_toBottomOf="@+id/status3" />
-
-    <TextView
-        android:id="@+id/temperature5"
-        android:layout_width="0dp"
-        android:layout_height="40dp"
-        android:background="@color/colorBackground"
-        android:gravity="center"
-        android:text="@string/city_temperature"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toStartOf="@+id/temperature1"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/status1" />
 
     <TextView
-        android:id="@+id/temperature6"
-        android:layout_width="0dp"
-        android:layout_height="40dp"
-        android:background="@color/colorBackground"
-        android:gravity="center"
-        android:text="@string/city_temperature"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/temperature2"
-        app:layout_constraintTop_toBottomOf="@+id/status7" />
-
-    <TextView
-        android:id="@+id/temperature7"
-        android:layout_width="0dp"
+        android:id="@+id/temperature2"
+        android:layout_width="59dp"
         android:layout_height="40dp"
         android:background="@color/colorBackground"
         android:gravity="center"
@@ -318,8 +255,73 @@
         android:textSize="24sp"
         app:layout_constraintEnd_toStartOf="@+id/temperature3"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/temperature4"
+        app:layout_constraintStart_toEndOf="@+id/temperature1"
+        app:layout_constraintTop_toBottomOf="@+id/status2" />
+
+    <TextView
+        android:id="@+id/temperature3"
+        android:layout_width="59dp"
+        android:layout_height="40dp"
+        android:background="@color/colorBackground"
+        android:gravity="center"
+        android:text="@string/city_temperature"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toStartOf="@+id/temperature4"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/temperature2"
+        app:layout_constraintTop_toBottomOf="@+id/status3" />
+
+    <TextView
+        android:id="@+id/temperature4"
+        android:layout_width="59dp"
+        android:layout_height="40dp"
+        android:background="@color/colorBackground"
+        android:gravity="center"
+        android:text="@string/city_temperature"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toStartOf="@+id/temperature5"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/temperature3"
         app:layout_constraintTop_toBottomOf="@+id/status4" />
+
+    <TextView
+        android:id="@+id/temperature5"
+        android:layout_width="59dp"
+        android:layout_height="40dp"
+        android:background="@color/colorBackground"
+        android:gravity="center"
+        android:text="@string/city_temperature"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toStartOf="@+id/temperature6"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/temperature4"
+        app:layout_constraintTop_toBottomOf="@+id/status5" />
+
+    <TextView
+        android:id="@+id/temperature6"
+        android:layout_width="59dp"
+        android:layout_height="40dp"
+        android:background="@color/colorBackground"
+        android:gravity="center"
+        android:text="@string/city_temperature"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toStartOf="@+id/temperature7"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/temperature5"
+        app:layout_constraintTop_toBottomOf="@+id/status6" />
+
+    <TextView
+        android:id="@+id/temperature7"
+        android:layout_width="59dp"
+        android:layout_height="40dp"
+        android:background="@color/colorBackground"
+        android:gravity="center"
+        android:text="@string/city_temperature"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/temperature6"
+        app:layout_constraintTop_toBottomOf="@+id/status7" />
 
     <Button
         android:id="@+id/citySearch_button"

@@ -6,6 +6,7 @@
     <string name="city_temperature">C&#176;</string>
     <string name="city_status">Status</string>
     <string name="city_search">Введите город</string>
+    <string name="search">Поиск</string>
     <string name="citySearch_button">Поиск городов</string>
     <string-array name="days">
         <item>Пн.</item>

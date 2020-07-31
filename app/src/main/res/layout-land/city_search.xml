@@ -17,7 +17,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
         android:background="@mipmap/search"
-        android:contentDescription="@string/city_search"
+        android:contentDescription="@string/search"
         app:layout_constraintBottom_toBottomOf="@+id/search_city"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/search_city" />

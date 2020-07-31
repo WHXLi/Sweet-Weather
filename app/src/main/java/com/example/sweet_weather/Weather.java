@@ -2,14 +2,15 @@ package com.example.sweet_weather;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.sweet_weather.databinding.WeatherBinding;
-
-import java.util.Objects;
 
 
 public class Weather extends AppCompatActivity {
@@ -18,11 +19,30 @@ public class Weather extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        instanceCheck(savedInstanceState);
         binding = WeatherBinding.inflate(getLayoutInflater());
         View view = binding.getRoot();
         initTextViews();
         initListener();
         setContentView(view);
+    }
+
+    @Override
+    protected void onRestoreInstanceState(@NonNull Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+        logLifeStage("onRestoreInstanceState", "смена ориентации экрана");
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        logLifeStage("onRestart", "перезапуск активити");
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        logLifeStage("onStop", "остановка предыдущей активити");
     }
 
     private void initTextViews() {
@@ -67,13 +87,28 @@ public class Weather extends AppCompatActivity {
     }
 
     private void setCityName(){
-        Bundle bundle = getIntent().getExtras();
-        assert bundle != null;
-        binding.cityName.setText(Objects.requireNonNull(bundle.get("cityName")).toString());
+        binding.cityName.setText(CityName.INSTANCE.getCityName());
     }
 
     private void initListener() {
         binding.citySearchButton.setOnClickListener((v) ->
                 startActivity(new Intent(Weather.this, CitySearch.class)));
+    }
+
+    private void instanceCheck(Bundle savedInstanceState) {
+        String instanceState;
+        if (savedInstanceState == null) {
+            instanceState = "Первый запуск";
+        } else instanceState = "Повторный запуск";
+        Toast.makeText(getApplicationContext(),
+                instanceState + " - активити создано",
+                Toast.LENGTH_SHORT).show();
+    }
+
+    private void logLifeStage(String tag, String text ){
+        Toast.makeText(getApplicationContext(),
+                tag + " - " + text,
+                Toast.LENGTH_SHORT).show();
+        Log.d(tag, text);
     }
 }
