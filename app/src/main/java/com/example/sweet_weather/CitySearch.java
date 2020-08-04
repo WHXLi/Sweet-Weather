@@ -74,7 +74,7 @@ public class CitySearch extends Activity {
             button.setOnClickListener((v) -> {
                 Button currentButton = (Button) v;
                 Intent intent = new Intent(CitySearch.this, Weather.class);
-                CityName.INSTANCE.setCityName(currentButton.getText().toString());
+                intent.putExtra("cityName", currentButton.getText().toString());
                 startActivity(intent);
             });
         }
