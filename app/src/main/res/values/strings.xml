@@ -8,6 +8,8 @@
     <string name="city_search">Введите город</string>
     <string name="search">Поиск</string>
     <string name="citySearch_button">Поиск городов</string>
+    <string name="cityInfo_button">Информация о городе</string>
+    <string name="cityInfo_link">https://www.google.com/search?q=</string>
     <string-array name="days">
         <item>Пн.</item>
         <item>Вт.</item>

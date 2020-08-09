@@ -1,6 +1,7 @@
 package com.example.sweet_weather;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -23,7 +24,7 @@ public class Weather extends AppCompatActivity {
         binding = WeatherBinding.inflate(getLayoutInflater());
         View view = binding.getRoot();
         initTextViews();
-        initListener();
+        initListeners();
         setContentView(view);
     }
 
@@ -86,13 +87,18 @@ public class Weather extends AppCompatActivity {
         }
     }
 
-    private void setCityName(){
-        binding.cityName.setText(CityName.INSTANCE.getCityName());
+    private void setCityName() {
+        binding.cityName.setText(getIntent().getStringExtra("cityName"));
     }
 
-    private void initListener() {
-        binding.citySearchButton.setOnClickListener((v) ->
+    private void initListeners() {
+        binding.citySearchButton.setOnClickListener(v ->
                 startActivity(new Intent(Weather.this, CitySearch.class)));
+        binding.cityInfoButton.setOnClickListener(v -> {
+            Uri uri = Uri.parse(getResources().getString(R.string.cityInfo_link) + binding.cityName.getText().toString());
+            startActivity(new Intent(Intent.ACTION_VIEW, uri));
+        });
+
     }
 
     private void instanceCheck(Bundle savedInstanceState) {
@@ -105,7 +111,7 @@ public class Weather extends AppCompatActivity {
                 Toast.LENGTH_SHORT).show();
     }
 
-    private void logLifeStage(String tag, String text ){
+    private void logLifeStage(String tag, String text) {
         Toast.makeText(getApplicationContext(),
                 tag + " - " + text,
                 Toast.LENGTH_SHORT).show();
