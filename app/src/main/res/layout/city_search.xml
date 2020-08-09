@@ -20,7 +20,7 @@
         android:layout_width="0dp"
         android:layout_height="50dp"
         android:autofillHints="@string/city_search"
-        android:background="@drawable/border_bottom"
+        android:background="@drawable/border_search"
         android:hint="@string/city_search"
         android:inputType="text"
         android:paddingStart="50dp"
@@ -32,125 +32,14 @@
 
     </EditText>
 
-    <Button
-        android:id="@+id/city1_link"
-        style="@style/Widget.AppCompat.ActionButton.Overflow"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/cities_list"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:text="@string/city_name"
-        android:textSize="36sp"
-        app:layout_constraintBottom_toTopOf="@+id/city2_link"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/city2_link"
-        app:layout_constraintTop_toBottomOf="@+id/search_city" />
-
-    <Button
-        android:id="@+id/city2_link"
-        style="@style/Widget.AppCompat.ActionButton.Overflow"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:text="@string/city_name"
-        android:textSize="36sp"
-        app:layout_constraintBottom_toTopOf="@+id/city3_link"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/city3_link"
-        app:layout_constraintTop_toBottomOf="@+id/city1_link" />
-
-    <Button
-        android:id="@+id/city3_link"
-        style="@style/Widget.AppCompat.ActionButton.Overflow"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:text="@string/city_name"
-        android:textSize="36sp"
-        app:layout_constraintBottom_toTopOf="@+id/city4_link"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/city4_link"
-        app:layout_constraintTop_toBottomOf="@+id/city2_link" />
-
-    <Button
-        android:id="@+id/city4_link"
-        style="@style/Widget.AppCompat.ActionButton.Overflow"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:text="@string/city_name"
-        android:textSize="36sp"
-        app:layout_constraintBottom_toTopOf="@+id/city5_link"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/city5_link"
-        app:layout_constraintTop_toBottomOf="@+id/city3_link" />
-
-    <Button
-        android:id="@+id/city5_link"
-        style="@style/Widget.AppCompat.ActionButton.Overflow"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:text="@string/city_name"
-        android:textSize="36sp"
-        app:layout_constraintBottom_toTopOf="@+id/city6_link"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/city6_link"
-        app:layout_constraintTop_toBottomOf="@+id/city4_link" />
-
-    <Button
-        android:id="@+id/city6_link"
-        style="@style/Widget.AppCompat.ActionButton.Overflow"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:text="@string/city_name"
-        android:textSize="36sp"
-        app:layout_constraintBottom_toTopOf="@+id/city7_link"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/city7_link"
-        app:layout_constraintTop_toBottomOf="@+id/city5_link" />
-
-    <Button
-        android:id="@+id/city7_link"
-        style="@style/Widget.AppCompat.ActionButton.Overflow"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:text="@string/city_name"
-        android:textSize="36sp"
-        app:layout_constraintBottom_toTopOf="@+id/city8_link"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/city8_link"
-        app:layout_constraintTop_toBottomOf="@+id/city6_link" />
-
-    <Button
-        android:id="@+id/city8_link"
-        style="@style/Widget.AppCompat.ActionButton.Overflow"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:text="@string/city_name"
-        android:textSize="36sp"
-        app:layout_constraintBottom_toTopOf="@+id/city9_link"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/city9_link"
-        app:layout_constraintTop_toBottomOf="@+id/city7_link" />
-
-    <Button
-        android:id="@+id/city9_link"
-        style="@style/Widget.AppCompat.ActionButton.Overflow"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:text="@string/city_name"
-        android:textSize="36sp"
-        app:layout_constraintBottom_toTopOf="@+id/city10_link"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/city10_link"
-        app:layout_constraintTop_toBottomOf="@+id/city8_link" />
-
-    <Button
-        android:id="@+id/city10_link"
-        style="@style/Widget.AppCompat.ActionButton.Overflow"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:text="@string/city_name"
-        android:textSize="36sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/city9_link" />
+        app:layout_constraintTop_toBottomOf="@+id/search_city" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

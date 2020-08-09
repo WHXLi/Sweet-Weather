@@ -1,99 +1,75 @@
 package com.example.sweet_weather;
 
-import android.app.Activity;
-import android.content.Intent;
+import android.content.res.Configuration;
 import android.os.Bundle;
-import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.Button;
-import android.widget.Toast;
+import android.view.ViewGroup;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.recyclerview.widget.RecyclerView.Adapter;
+import androidx.recyclerview.widget.RecyclerView.LayoutManager;
 
-import com.example.sweet_weather.databinding.CitySearchBinding;
+import com.example.sweet_weather.EventBus.CityName_Event;
+import com.example.sweet_weather.EventBus.EventBus;
+import com.example.sweet_weather.RecyclerView.CitiesAdapter;
+import com.example.sweet_weather.RecyclerView.MyViewHolder;
+import com.example.sweet_weather.RecyclerView.TouchListener;
 
-public class CitySearch extends Activity {
-    private CitySearchBinding binding;
-
+public class CitySearch extends Fragment {
+    @Nullable
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        instanceCheck(savedInstanceState);
-        binding = CitySearchBinding.inflate(getLayoutInflater());
-        View view = binding.getRoot();
-        initCities();
-        setContentView(view);
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.city_search, container, false);
+        initCities(view);
+        return view;
     }
 
-    @Override
-    protected void onRestoreInstanceState(@NonNull Bundle savedInstanceState) {
-        super.onRestoreInstanceState(savedInstanceState);
-        logLifeStage("onRestoreInstanceState", "смена ориентации экрана");
-    }
-
-    @Override
-    protected void onRestart() {
-        super.onRestart();
-        logLifeStage("onRestart", "перезапуск активити");
-    }
-
-    @Override
-    protected void onStop() {
-        super.onStop();
-        logLifeStage("onStop", "остановка предыдущей активити");
-
-    }
-
-    private void initCities() {
+    private void initCities(View view) {
         String[] cities = getResources().getStringArray(R.array.cities);
-        Button[] buttons = new Button[]{
-                binding.city1Link,
-                binding.city2Link,
-                binding.city3Link,
-                binding.city4Link,
-                binding.city5Link,
-                binding.city6Link,
-                binding.city7Link,
-                binding.city8Link,
-                binding.city9Link,
-                binding.city10Link
-        };
-        setCitiesNames(buttons, cities);
-        initListeners(buttons);
+        RecyclerView cities_list = view.findViewById(R.id.cities_list);
+        LayoutManager layoutManager = new LinearLayoutManager(getActivity());
+        Adapter<MyViewHolder> adapter_cities = new CitiesAdapter(cities);
+        cities_list.setLayoutManager(layoutManager);
+        cities_list.setAdapter(adapter_cities);
+        initClickListener(cities_list);
     }
 
-    private void setCitiesNames(Button[] target, String[] values) {
-        for (int i = 0; i < target.length; i++) {
-            target[i].setText(values[i]);
+    private void initClickListener(RecyclerView recyclerView) {
+        recyclerView.addOnItemTouchListener(
+                new TouchListener(getActivity(), recyclerView, new TouchListener.OnItemClickListener() {
+                    @Override
+                    public void onItemClick(View view, int position) {
+                        transaction((TextView) view);
+                    }
+
+                    @Override
+                    public void onLongItemClick(View view, int position) {
+                    }
+                }));
+    }
+
+    private void transaction(TextView view) {
+        Weather weather = new Weather();
+        EventBus.getBus().register(weather);
+        EventBus.getBus().post(new CityName_Event(view.getText().toString()));
+        assert getFragmentManager() != null;
+        if (getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE) {
+            getFragmentManager()
+                    .beginTransaction()
+                    .replace(R.id.container2, weather)
+                    .commit();
+        } else {
+            getFragmentManager()
+                    .beginTransaction()
+                    .replace(R.id.container, weather)
+                    .addToBackStack(null)
+                    .commit();
         }
-    }
-
-    private void initListeners(Button[] buttons) {
-        for (Button button : buttons) {
-            button.setOnClickListener((v) -> {
-                Button currentButton = (Button) v;
-                Intent intent = new Intent(CitySearch.this, Weather.class);
-                intent.putExtra("cityName", currentButton.getText().toString());
-                startActivity(intent);
-            });
-        }
-    }
-
-    private void instanceCheck(Bundle savedInstanceState) {
-        String instanceState;
-        if (savedInstanceState == null) {
-            instanceState = "Первый запуск";
-        } else instanceState = "Повторный запуск";
-        Toast.makeText(getApplicationContext(),
-                instanceState + " - активити создано",
-                Toast.LENGTH_SHORT).show();
-    }
-
-    private void logLifeStage(String tag, String text) {
-        Toast.makeText(getApplicationContext(),
-                tag + " - " + text,
-                Toast.LENGTH_SHORT).show();
-        Log.d(tag, text);
     }
 }
