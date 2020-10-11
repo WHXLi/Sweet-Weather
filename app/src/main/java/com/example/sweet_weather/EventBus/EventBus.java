@@ -1,0 +1,12 @@
+package com.example.sweet_weather.EventBus;
+
+import com.squareup.otto.Bus;
+
+public class EventBus {
+    private static Bus bus;
+
+    public static Bus getBus() {
+        if (bus == null) bus = new Bus();
+        return bus;
+    }
+}

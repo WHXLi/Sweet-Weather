@@ -13,313 +13,76 @@
         android:contentDescription="@string/background"
         android:scaleType="centerCrop"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/day1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@mipmap/cloud_bg" />
 
     <TextView
         android:id="@+id/cityName"
-        android:layout_width="400dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"
         android:text="@string/city_name"
         android:textSize="36sp"
-        app:layout_constraintBottom_toBottomOf="@+id/background"
-        app:layout_constraintEnd_toStartOf="@+id/day1"
+        app:layout_constraintBottom_toTopOf="@+id/guideline"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.18" />
+        app:layout_constraintVertical_bias="0.10" />
 
     <TextView
         android:id="@+id/cityTemperature"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/city_temperature"
-        android:textSize="30sp"
-        app:layout_constraintEnd_toStartOf="@+id/day2"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline"
+        app:layout_constraintEnd_toStartOf="@+id/cityStatus"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cityName" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/cityStatus"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/city_status"
-        android:textSize="30sp"
-        app:layout_constraintEnd_toStartOf="@+id/day3"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cityTemperature" />
-
-    <TextView
-        android:id="@+id/day1"
-        android:layout_width="80dp"
-        android:layout_height="0dp"
-        android:background="@color/colorBackground"
-        android:gravity="center"
-        android:text="@string/city_day"
-        android:textSize="30sp"
-        app:layout_constraintBottom_toTopOf="@+id/day2"
-        app:layout_constraintStart_toStartOf="@+id/day2"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        app:layout_constraintVertical_chainStyle="packed" />
-
-    <TextView
-        android:id="@+id/day2"
-        android:layout_width="80dp"
-        android:layout_height="0dp"
-        android:background="@color/colorBackground"
-        android:gravity="center"
-        android:text="@string/city_day"
-        android:textSize="30sp"
-        app:layout_constraintBottom_toTopOf="@+id/day3"
-        app:layout_constraintStart_toStartOf="@+id/day3"
-        app:layout_constraintTop_toBottomOf="@+id/day1" />
-
-    <TextView
-        android:id="@+id/day3"
-        android:layout_width="80dp"
-        android:layout_height="0dp"
-        android:background="@color/colorBackground"
-        android:gravity="center"
-        android:text="@string/city_day"
-        android:textSize="30sp"
-        app:layout_constraintBottom_toTopOf="@+id/day4"
-        app:layout_constraintStart_toStartOf="@+id/day4"
-        app:layout_constraintTop_toBottomOf="@+id/day2" />
-
-    <TextView
-        android:id="@+id/day4"
-        android:layout_width="80dp"
-        android:layout_height="0dp"
-        android:background="@color/colorBackground"
-        android:gravity="center"
-        android:text="@string/city_day"
-        android:textSize="30sp"
-        app:layout_constraintBottom_toTopOf="@+id/day5"
-        app:layout_constraintStart_toStartOf="@+id/day5"
-        app:layout_constraintTop_toBottomOf="@+id/day3" />
-
-    <TextView
-        android:id="@+id/day5"
-        android:layout_width="80dp"
-        android:layout_height="0dp"
-        android:background="@color/colorBackground"
-        android:gravity="center"
-        android:text="@string/city_day"
-        android:textSize="30sp"
-        app:layout_constraintBottom_toTopOf="@+id/day6"
-        app:layout_constraintStart_toStartOf="@+id/day6"
-        app:layout_constraintTop_toBottomOf="@+id/day4" />
-
-    <TextView
-        android:id="@+id/day6"
-        android:layout_width="80dp"
-        android:layout_height="0dp"
-        android:background="@color/colorBackground"
-        android:gravity="center"
-        android:text="@string/city_day"
-        android:textSize="30sp"
-        app:layout_constraintBottom_toTopOf="@+id/day7"
-        app:layout_constraintStart_toStartOf="@+id/day7"
-        app:layout_constraintTop_toBottomOf="@+id/day5" />
-
-    <TextView
-        android:id="@+id/day7"
-        android:layout_width="80dp"
-        android:layout_height="0dp"
-        android:background="@color/colorBackground"
-        android:gravity="center"
-        android:text="@string/city_day"
-        android:textSize="30sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/status7"
-        app:layout_constraintTop_toBottomOf="@+id/day6" />
-
-    <ImageView
-        android:id="@+id/status1"
-        android:layout_width="80dp"
-        android:layout_height="0dp"
-        android:contentDescription="@string/city_status"
-        android:scaleType="fitXY"
-        app:layout_constraintBottom_toTopOf="@+id/status2"
-        app:layout_constraintEnd_toStartOf="@+id/temperature1"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        app:layout_constraintVertical_chainStyle="packed"
-        app:srcCompat="@mipmap/sun" />
-
-    <ImageView
-        android:id="@+id/status2"
-        android:layout_width="80dp"
-        android:layout_height="0dp"
-        android:contentDescription="@string/city_status"
-        android:scaleType="fitXY"
-        app:layout_constraintBottom_toTopOf="@+id/status3"
-        app:layout_constraintStart_toStartOf="@+id/status1"
-        app:layout_constraintTop_toBottomOf="@+id/status1"
-        app:srcCompat="@mipmap/cloud" />
-
-    <ImageView
-        android:id="@+id/status3"
-        android:layout_width="80dp"
-        android:layout_height="0dp"
-        android:contentDescription="@string/city_status"
-        android:scaleType="fitXY"
-        app:layout_constraintBottom_toTopOf="@+id/status4"
-        app:layout_constraintStart_toStartOf="@+id/status2"
-        app:layout_constraintTop_toBottomOf="@+id/status2"
-        app:srcCompat="@mipmap/sun" />
-
-    <ImageView
-        android:id="@+id/status4"
-        android:layout_width="80dp"
-        android:layout_height="0dp"
-        android:contentDescription="@string/city_status"
-        android:scaleType="fitXY"
-        app:layout_constraintBottom_toTopOf="@+id/status5"
-        app:layout_constraintStart_toStartOf="@+id/status3"
-        app:layout_constraintTop_toBottomOf="@+id/status3"
-        app:srcCompat="@mipmap/rain" />
-
-    <ImageView
-        android:id="@+id/status5"
-        android:layout_width="80dp"
-        android:layout_height="0dp"
-        android:contentDescription="@string/city_status"
-        android:scaleType="fitXY"
-        app:layout_constraintBottom_toTopOf="@+id/status6"
-        app:layout_constraintStart_toStartOf="@+id/status4"
-        app:layout_constraintTop_toBottomOf="@+id/status4"
-        app:srcCompat="@mipmap/storm" />
-
-    <ImageView
-        android:id="@+id/status6"
-        android:layout_width="80dp"
-        android:layout_height="0dp"
-        android:contentDescription="@string/city_status"
-        android:scaleType="fitXY"
-        app:layout_constraintBottom_toTopOf="@+id/status7"
-        app:layout_constraintStart_toStartOf="@+id/status5"
-        app:layout_constraintTop_toBottomOf="@+id/status5"
-        app:srcCompat="@mipmap/rain" />
-
-    <ImageView
-        android:id="@+id/status7"
-        android:layout_width="80dp"
-        android:layout_height="0dp"
-        android:contentDescription="@string/city_status"
-        android:scaleType="fitXY"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/status6"
-        app:layout_constraintTop_toBottomOf="@+id/status6"
-        app:srcCompat="@mipmap/sun" />
-
-    <TextView
-        android:id="@+id/temperature1"
-        android:layout_width="80dp"
-        android:layout_height="0dp"
-        android:background="@color/colorBackground"
-        android:gravity="center"
-        android:text="@string/city_temperature"
         android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/temperature2"
-        app:layout_constraintStart_toStartOf="@+id/temperature2"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        app:layout_constraintVertical_chainStyle="packed" />
+        app:layout_constraintBottom_toTopOf="@+id/guideline"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/cityTemperature"
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/temperature2"
-        android:layout_width="80dp"
-        android:layout_height="0dp"
-        android:background="@color/colorBackground"
-        android:gravity="center"
-        android:text="@string/city_temperature"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/temperature3"
-        app:layout_constraintStart_toStartOf="@+id/temperature3"
-        app:layout_constraintTop_toBottomOf="@+id/temperature1" />
-
-    <TextView
-        android:id="@+id/temperature3"
-        android:layout_width="80dp"
-        android:layout_height="0dp"
-        android:background="@color/colorBackground"
-        android:gravity="center"
-        android:text="@string/city_temperature"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/temperature4"
-        app:layout_constraintStart_toStartOf="@+id/temperature4"
-        app:layout_constraintTop_toBottomOf="@+id/temperature2" />
-
-    <TextView
-        android:id="@+id/temperature4"
-        android:layout_width="80dp"
-        android:layout_height="0dp"
-        android:background="@color/colorBackground"
-        android:gravity="center"
-        android:text="@string/city_temperature"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/temperature5"
-        app:layout_constraintStart_toStartOf="@+id/temperature5"
-        app:layout_constraintTop_toBottomOf="@+id/temperature3" />
-
-    <TextView
-        android:id="@+id/temperature5"
-        android:layout_width="80dp"
-        android:layout_height="0dp"
-        android:background="@color/colorBackground"
-        android:gravity="center"
-        android:text="@string/city_temperature"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/temperature6"
-        app:layout_constraintStart_toStartOf="@+id/temperature6"
-        app:layout_constraintTop_toBottomOf="@+id/temperature4" />
-
-    <TextView
-        android:id="@+id/temperature6"
-        android:layout_width="80dp"
-        android:layout_height="0dp"
-        android:background="@color/colorBackground"
-        android:gravity="center"
-        android:text="@string/city_temperature"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/temperature7"
-        app:layout_constraintStart_toStartOf="@+id/temperature7"
-        app:layout_constraintTop_toBottomOf="@+id/temperature5" />
-
-    <TextView
-        android:id="@+id/temperature7"
-        android:layout_width="80dp"
-        android:layout_height="0dp"
-        android:background="@color/colorBackground"
-        android:gravity="center"
-        android:text="@string/city_temperature"
-        android:textSize="24sp"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/weather_table"
+        android:layout_width="match_parent"
+        android:layout_height="140dp"
+        android:layout_gravity="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/temperature6" />
+        app:layout_constraintStart_toStartOf="parent">
 
-    <Button
-        android:id="@+id/citySearch_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/citySearch_button"
-        app:layout_constraintBottom_toBottomOf="@+id/background"
-        app:layout_constraintEnd_toStartOf="@+id/day6"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cityStatus" />
+    </androidx.recyclerview.widget.RecyclerView>
 
     <Button
         android:id="@+id/cityInfo_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/cityInfo_button"
-        app:layout_constraintBottom_toBottomOf="@+id/background"
-        app:layout_constraintEnd_toStartOf="@+id/day7"
+        app:layout_constraintBottom_toTopOf="@+id/weather_table"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/citySearch_button" />
+        app:layout_constraintTop_toBottomOf="@+id/cityStatus" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.5" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
